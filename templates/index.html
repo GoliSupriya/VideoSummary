@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Summarization</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 350px;
+            text-align: center;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            font-weight: bold;
+        }
+
+        input, select, button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Video Summarization</h2>
+        <form action="/process" method="post" enctype="multipart/form-data">
+            <label for="youtube_url">Enter YouTube URL:</label>
+            <input type="url" id="youtube_url" name="youtubeUrl" placeholder="https://www.youtube.com/watch?v=xxxx">
+
+            <label for="video_file">Upload Video File:</label>
+            <input type="file" id="video_file" name="videoFile" accept="video/*">
+
+            <label for="summarization_type">Select Summarization Format:</label>
+            <select id="summarization_type" name="summarization_type" required>
+                <option value="summarized_video">Summarized Video</option>
+                <option value="summarized_text">Summarized Text</option>
+                <option value="summarized_audio">Summarized Audio</option>
+            </select>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+</body>
+</html>
